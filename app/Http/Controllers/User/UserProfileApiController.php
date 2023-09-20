@@ -21,17 +21,10 @@ class UserProfileApiController extends Controller
             'user' => $user
         ], 200);
     }
-<<<<<<< HEAD
 // -------------------------------------------------------------------------
 // User Profile Store
 
     public function UserProfileStore(Request $request){
-=======
-    // User Profile Store
-
-    public function UserProfileStore(Request $request)
-    {
->>>>>>> f77dc7cea0bbba8aca0ec126c172e9cad71aa7fb
         $user = Auth::user();
 
         $validator = Validator::make($request->all(), [
@@ -54,12 +47,8 @@ class UserProfileApiController extends Controller
             $filename = uniqid() . $file->getClientOriginalName();
             $file->move(public_path('uploads/user_img/'), $filename);
             $user['photo'] = $filename;
-<<<<<<< HEAD
         }
 
-=======
-        };
->>>>>>> f77dc7cea0bbba8aca0ec126c172e9cad71aa7fb
         $user->save();
 
 
